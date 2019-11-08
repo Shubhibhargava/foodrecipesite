@@ -1,0 +1,29 @@
+
+<section class="best-receipe-area">
+        
+       
+        
+
+            <div class="row" >
+               
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4" *ngFor="let recipe of recipeinfo">
+                        
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="{{recipe.strMealThumb}}" alt="">
+                        <div class="receipe-content">
+                            <a routerLink="/recipe/{{recipe.idMeal}}" >
+                                <h5>{{recipe.strMeal}}</h5>
+                            </a>
+                           
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+              
+           
+        
+</section>
+    <!-- ##### Best Receipe Area End ##### -->
+

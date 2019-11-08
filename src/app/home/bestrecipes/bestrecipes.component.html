@@ -1,0 +1,33 @@
+<section class="best-receipe-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h3>The Best Receipies</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" >
+               
+                <!-- Single Best Receipe Area -->
+                <div class="col-12 col-sm-6 col-lg-4" *ngFor="let product of products; let i=index">
+                        <div *ngIf="i>2 && i<9">
+                    <div class="single-best-receipe-area mb-30">
+                        <img src="{{product.strMealThumb}}" alt="">
+                        <div class="receipe-content">
+                            <a  routerLink="/recipe/{{product.idMeal}}">
+                                <h5>{{product.strMeal}}</h5>
+                            </a>
+                           
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+               
+            </div>
+        </div>
+</section>
+    <!-- ##### Best Receipe Area End ##### -->
+

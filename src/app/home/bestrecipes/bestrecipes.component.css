@@ -1,0 +1,43 @@
+.best-receipe-area {
+    position: relative;
+    z-index: 1;
+    padding-bottom: 30px; }
+  
+  .single-best-receipe-area {
+    position: relative;
+    z-index: 1; 
+    padding: 50px;}
+    .single-best-receipe-area img {
+        height: 300px;
+        width: 300px;
+      border-bottom: 3px solid #40ba37; }
+    .single-best-receipe-area .receipe-content {
+      padding-top: 30px;
+      text-align: center; }
+      .single-best-receipe-area .receipe-content h5 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        font-weight: 400;
+        -webkit-transition-duration: 500ms;
+        transition-duration: 500ms; }
+        .single-best-receipe-area .receipe-content h5:hover, .single-best-receipe-area .receipe-content h5:focus {
+          color: #40ba37; }
+      .single-best-receipe-area .receipe-content .ratings i {
+        font-size: 11px;
+        color: #fbb710;
+        display: inline-block;
+        padding: 0 1px; }
+       
+        .section-heading {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 30px;
+            text-align: center; }
+            .section-heading h3 {
+              font-size: 30px;
+              margin-bottom: 0; }
+            .section-heading.text-left {
+              text-align: left !important; }
+            .section-heading.white h3 {
+              color: #ffffff; }
+          

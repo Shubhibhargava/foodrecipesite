@@ -1,0 +1,66 @@
+.single-top-catagory {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 80px;
+    margin-top: 60px;
+    -webkit-transition-duration: 500ms;
+    transition-duration: 500ms;
+    overflow: hidden; }
+    .single-top-catagory img {
+      width: 100%;
+    height: 300px; }
+    .single-top-catagory::after {
+      content: "";
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.8);
+      background: -webkit-linear-gradient(to right, #000, rgba(0, 0, 0, 0.1));
+      background: linear-gradient(to right, #000, rgba(0, 0, 0, 0.1)); }
+    .single-top-catagory .top-cta-content {
+      position: absolute;
+      top: 50%;
+      left: 40px;
+      width: auto;
+      height: auto;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      z-index: 10; }
+      .single-top-catagory .top-cta-content h3 {
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: 600;
+        margin-bottom: 5px; }
+        @media only screen and (max-width: 767px) {
+          .single-top-catagory .top-cta-content h3 {
+            font-size: 18px; } }
+      .single-top-catagory .top-cta-content h6 {
+        color: #ffffff;
+        margin-bottom: 30px;
+        display: block;
+        font-weight: 400; }
+        @media only screen and (max-width: 767px) {
+          .single-top-catagory .top-cta-content h6 {
+            margin-bottom: 10px; } }
+            .delicious-btn {
+                display: inline-block;
+                min-width: 160px;
+                height: 60px;
+                color: #ffffff;
+                border: none;
+                border-left: 3px solid #1c8314;
+                border-radius: 0;
+                padding: 0 30px;
+                font-size: 16px;
+                line-height: 58px;
+                font-weight: 600;
+                -webkit-transition-duration: 500ms;
+                transition-duration: 500ms;
+                text-transform: capitalize;
+                background-color: #40ba37; }
+                .mb-30 {
+                    margin-bottom: 30px !important; }
+           

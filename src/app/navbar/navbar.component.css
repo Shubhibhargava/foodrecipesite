@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i");
+.logoimg{
+    padding-left:30px;
+  padding-right:30px;
+}
+.nav-element{
+    margin-left: 50px;
+}
+.navfont{
+    
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+        padding: 12px 18px 11px;
+        font-weight: 550;
+       
+}

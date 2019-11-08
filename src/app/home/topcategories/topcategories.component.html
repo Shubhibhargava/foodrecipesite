@@ -1,0 +1,22 @@
+<section class="top-catagory-area section-padding-80-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6"  *ngFor="let product of products; let i=index" >
+                <div *ngIf="i>25 && i<28">
+                <div class="single-top-catagory">
+                    <img src="{{product.strMealThumb}}" alt="">
+                    <!-- Content -->
+                    <div class="top-cta-content">
+                        <h3>{{product.strMeal}}</h3>
+                        <h6>Simple &amp; Delicious</h6>
+                        <a  routerLink="/recipe/{{product.idMeal}}" class="btn delicious-btn">See Full Receipe</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- Top Catagory Area -->
+            
+        </div>
+    </div>
+</section>
+            

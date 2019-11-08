@@ -1,0 +1,50 @@
+<footer class="page-footer font-small blue pt-4" id="footer">
+        <div class="container-fluid text-center text-md-left">
+          <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3" id="div1">
+              <h5 class="text-uppercase">{{CI}}</h5>
+              <ul id="ul1" *ngFor = "let add of adds">
+              <li>{{add}}</li>
+              </ul>
+            </div>
+      
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-3 mb-md-0 mb-3" id="div2">
+              <h5 class="text-uppercase">{{link}}</h5>
+      
+              <ul class="list-unstyled" id="ul2">
+                <li id="li1" *ngFor = "let link of links">
+                  <a href="#!" id="a">{{link}}</a>
+                </li>
+              </ul>
+      
+            </div>
+            <div class="col-md-3 mb-md-0 mb-3" id="div3">
+              <h5>{{CU}}</h5>
+              <form method="" action="" id="form">
+                  <div class="form-group">
+                      <label class="control-label sr-only" for="name"></label>
+                      <input id="name" type="text" name="name" class="form-control" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label sr-only" for="email"></label>
+                      <input id="email" type="email" name="email" class="form-control" placeholder="EMail">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label sr-only" for="phone"></label>
+                      <input id="phone" type="text" name="phone" class="form-control" placeholder="Phone">
+                  </div>
+                  <div class="form-group">
+                      <label class="control-label sr-only" for="message"></label>
+                      <textarea class="form-control" id="message" name="message" rows="3" placeholder="Message"></textarea>
+                  </div>
+                  <button type="button" class="btn btn-outline-success" type="submit" id="btn">{{msg}}</button>
+              </form>
+      
+            </div>
+          </div>
+       </div>
+        <div class="footer-copyright text-center py-3" id="div4">{{CP}}
+          <a href="https://mdbootstrap.com/education/bootstrap/" id="a2">{{site}}</a>
+        </div>
+      </footer>

@@ -1,14 +1,18 @@
-.single-top-catagory {
+.section-padding-80-0 {
+  padding-top: 80px;
+  padding-bottom: 0; }
+  .single-top-catagory {
     position: relative;
     z-index: 2;
+    width: 500px;
     margin-bottom: 80px;
-    margin-top: 60px;
+    margin-left: 35px;
     -webkit-transition-duration: 500ms;
     transition-duration: 500ms;
     overflow: hidden; }
     .single-top-catagory img {
       width: 100%;
-    height: 300px; }
+    height: 250px;; }
     .single-top-catagory::after {
       content: "";
       position: absolute;
@@ -46,21 +50,58 @@
           .single-top-catagory .top-cta-content h6 {
             margin-bottom: 10px; } }
             .delicious-btn {
-                display: inline-block;
-                min-width: 160px;
-                height: 60px;
-                color: #ffffff;
-                border: none;
-                border-left: 3px solid #1c8314;
-                border-radius: 0;
-                padding: 0 30px;
+              display: inline-block;
+              min-width: 160px;
+              height: 60px;
+              color: #ffffff;
+              border: none;
+              border-left: 3px solid #1c8314;
+              border-radius: 0;
+              padding: 0 30px;
+              font-size: 16px;
+              line-height: 58px;
+              font-weight: 600;
+              -webkit-transition-duration: 500ms;
+              transition-duration: 500ms;
+              text-transform: capitalize;
+              background-color: #40ba37; }
+              .delicious-btn.active, .delicious-btn:hover, .delicious-btn:focus {
                 font-size: 16px;
-                line-height: 58px;
                 font-weight: 600;
-                -webkit-transition-duration: 500ms;
-                transition-duration: 500ms;
-                text-transform: capitalize;
-                background-color: #40ba37; }
-                .mb-30 {
-                    margin-bottom: 30px !important; }
-           
+                color: #ffffff;
+                background-color: #1c8314;
+                border-color: #40ba37; }
+              .delicious-btn.btn-2 {
+                background-color: #1c8314;
+                border-color: #40ba37; }
+                .delicious-btn.btn-2.active, .delicious-btn.btn-2:hover, .delicious-btn.btn-2:focus {
+                  background-color: #40ba37;
+                  border-color: #1c8314; }
+              .delicious-btn.btn-3 {
+                background-color: #474747;
+                border-color: #1c8314; }
+                .delicious-btn.btn-3.active, .delicious-btn.btn-3:hover, .delicious-btn.btn-3:focus {
+                  background-color: #40ba37;
+                  border-color: #1c8314; }
+              .delicious-btn.btn-4 {
+                background-color: transparent;
+                border: 3px solid #40ba37;
+                line-height: 53px;
+                color: #40ba37; }
+                @media only screen and (max-width: 767px) {
+                  .delicious-btn.btn-4 {
+                    height: 40px;
+                    line-height: 33px; } }
+                .delicious-btn.btn-4.active, .delicious-btn.btn-4:hover, .delicious-btn.btn-4:focus {
+                  line-height: 53px;
+                  color: #ffffff;
+                  background-color: #40ba37; }
+                  @media only screen and (max-width: 767px) {
+                    .delicious-btn.btn-4.active, .delicious-btn.btn-4:hover, .delicious-btn.btn-4:focus {
+                      height: 40px;
+                      line-height: 33px; } }
+              @media only screen and (max-width: 767px) {
+                .delicious-btn {
+                  height: 40px;
+                  line-height: 39px; } }
+                  

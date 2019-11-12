@@ -13,6 +13,7 @@ body {
     overflow-x: hidden;
     padding-top: 30px;
     margin-top: 75px;
+    cursor: default;
   }
   
   .sidenav a {
@@ -28,6 +29,7 @@ body {
   }
   
   
+  
   .main {
     margin-left: 160px; /* Same as the width of the sidenav */
     font-size: 28px; /* Increased text to enable scrolling */
@@ -38,3 +40,9 @@ body {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
   }
+  
+  .highlight {
+    background-color: black;
+    
+  }
+ 

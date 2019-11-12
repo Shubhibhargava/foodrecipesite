@@ -5,8 +5,11 @@
 <body>
 
 <div class="sidenav">
-  <a (click)="getCategoryrecipe(category.strCategory)"  *ngFor="let category of categories" >{{category.strCategory}}</a>
+  <!-- displaying all categories -->
+  <a (click)="getCategoryrecipe(category.strCategory)"   class="highlight">chicken</a>
+  <a (click)="getCategoryrecipe(category.strCategory)"  *ngFor="let category of categories" (click)="selectrecipe($event)"  routerLinkActive="active">{{category.strCategory}}</a>
   
 </div>
+
 </body>
 </html>

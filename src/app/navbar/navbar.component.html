@@ -1,7 +1,7 @@
 <!-- navbar wrapper -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
   <!-- logo image -->
-    <img class="logoimg" src="assets/img/core-img/logo.png" alt="">
+    <a routerLink="/home"><img class="logoimg" src="assets/img/core-img/logo.png" alt="" ></a>
     
   <!-- navbar options -->
     <div class="collapse navbar-collapse nav-element" id="navbarSupportedContent">
@@ -10,22 +10,14 @@
           <a class="nav-link navfont" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a>
         </li>
         
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle navfont" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Categories
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown" >
-            <a class="dropdown-item" href="#" *ngFor="let category of categories">{{category.strCategory}}</a>
-            </div>
-            
-        </li> -->
+       
        
         
       </ul>
       <!-- search bar -->
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <form  (ngSubmit)="submitForm(box.value)" class="form-inline my-2 my-lg-0">
+        <input #box ng-keyup="submitForm(box.value)" class="form-control mr-sm-2" type="search"  placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/search">Search</button>
       </form>
     </div>
   </nav>

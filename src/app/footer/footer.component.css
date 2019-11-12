@@ -5,30 +5,32 @@
     
 }
 
-h5 {
-    color: white;
-}
 
 #div1 {
-    padding: 50px;
+    
+    margin-top: 30px;
     margin-left: 50px;
 }
-
-#div2 {
-    padding: 50px;
-    margin-left: -150px;
-
+#div1 a{
+    text-transform: capitalize;
 }
 
-#div3 {
-    padding: 50px;
-  
+.fimg{
+    margin-left: 200px;
+    margin-top: 70px;
+
+}
+.quote{
+    color: green;
+    margin-top: 80px;
+    margin-left: 150px;
+}
+.enjoy{
+    margin-top: 100px;
+   
 }
 
-#ul1 {
-    margin-top: 30px;
-    color: gray;
-}
+
  
 #ul2 {
     margin-top: 50px;
@@ -37,51 +39,19 @@ h5 {
 #li1 {
     margin-top: 20px;
     margin-left: 20px;
-    list-style-type: circle;
+   
     color: green;
 }
 
-#name {
-    background: none;
-    border: none;
-    border-bottom: 2px solid gray;
-    border-radius: 0px;
-}
 
-#email {
-    background: none;
-    border: none;
-    border-bottom: 2px solid gray;
-    border-radius: 0px;
-}
-
-#phone {
-    background: none;
-    border: none;
-    border-bottom: 2px solid gray;
-    border-radius: 0px;
-}
-
-#message {
-    background: none;
-    border: none;
-    border-bottom: 2px solid gray;
-    border-radius: 0px;
-}
-
-#form {
-    margin-top: 50px;
-}
 
 #a {
     color: green;
 }
 
-#div4 {
-    color: gray;
-    font-weight: bold;
-}
 
-#a2 {
-    color: green;
-}
+
+
+ul li{
+    list-style-type: none;
+  }

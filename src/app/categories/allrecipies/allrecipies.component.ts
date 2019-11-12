@@ -6,6 +6,9 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './allrecipies.component.html',
   styleUrls: ['./allrecipies.component.css']
 })
+/**
+ * @author: shubhangi
+ */
 export class AllrecipiesComponent implements OnInit {
   catId :any;
   recipeinfo: any;
@@ -14,6 +17,9 @@ export class AllrecipiesComponent implements OnInit {
   constructor(private apiService: ApiService,private httpClient: HttpClient) { }
 
   ngOnInit() {
+    /**
+     * displaying data when page is loaded
+     */
     if(this.val=="false"){
       this.httpClient.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Beef`).subscribe((param: any[]) => {
         
@@ -26,6 +32,9 @@ export class AllrecipiesComponent implements OnInit {
   
        });
     }
+    /**
+     * change data according to the category selected
+     */
     
     this.apiService.receivedFilter.subscribe((param: any[]) => {
      

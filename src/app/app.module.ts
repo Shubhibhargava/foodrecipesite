@@ -17,6 +17,16 @@ import { CategoriesComponent } from './categories/categories.component';
 import { SidebarComponent } from './categories/sidebar/sidebar.component';
 import { AllrecipiesComponent } from './categories/allrecipies/allrecipies.component';
 import { RecipesComponent } from './recipes/recipes.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';  
+import { FormsModule ,ReactiveFormsModule}   from '@angular/forms';
+import { SearchresultComponent } from './searchresult/searchresult.component';
+import { RecipelistComponent } from './recipelist/recipelist.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactusComponent } from './contactus/contactus.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +43,21 @@ import { RecipesComponent } from './recipes/recipes.component';
     SidebarComponent,
     AllrecipiesComponent,
     RecipesComponent,
+    SearchresultComponent,
+    RecipelistComponent,
+    ContactusComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
+    FormsModule ,ReactiveFormsModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
+    BrowserAnimationsModule,
     AlertModule.forRoot()
   ],
   providers: [ApiService],

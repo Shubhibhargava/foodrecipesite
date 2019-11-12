@@ -60,16 +60,26 @@
                             <!-- Custom Checkbox -->
                             <ul>
                                
-                                <li class="label" >{{recipeinfo.strMeasure1}} {{recipeinfo.strIngredient1}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure2}} {{recipeinfo.strIngredient2}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure3}} {{recipeinfo.strIngredient3}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure4}} {{recipeinfo.strIngredient4}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure5}} {{recipeinfo.strIngredient5}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure6}} {{recipeinfo.strIngredient6}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure7}} {{recipeinfo.strIngredient7}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure8}} {{recipeinfo.strIngredient8}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure9}} {{recipeinfo.strIngredient9}}</li>
-                                <li class="label" >{{recipeinfo.strMeasure10}} {{recipeinfo.strIngredient10}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure1">{{recipeinfo.strMeasure1}} {{recipeinfo.strIngredient1}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure2">{{recipeinfo.strMeasure2}} {{recipeinfo.strIngredient2}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure3">{{recipeinfo.strMeasure3}} {{recipeinfo.strIngredient3}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure4">{{recipeinfo.strMeasure4}} {{recipeinfo.strIngredient4}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure5">{{recipeinfo.strMeasure5}} {{recipeinfo.strIngredient5}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure6">{{recipeinfo.strMeasure6}} {{recipeinfo.strIngredient6}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure7">{{recipeinfo.strMeasure7}} {{recipeinfo.strIngredient7}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure8">{{recipeinfo.strMeasure8}} {{recipeinfo.strIngredient8}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure9">{{recipeinfo.strMeasure9}} {{recipeinfo.strIngredient9}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure10">{{recipeinfo.strMeasure10}} {{recipeinfo.strIngredient10}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure11">{{recipeinfo.strMeasure1}} {{recipeinfo.strIngredient1}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure12">{{recipeinfo.strMeasure2}} {{recipeinfo.strIngredient2}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure13">{{recipeinfo.strMeasure3}} {{recipeinfo.strIngredient3}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure14">{{recipeinfo.strMeasure4}} {{recipeinfo.strIngredient4}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure15">{{recipeinfo.strMeasure5}} {{recipeinfo.strIngredient5}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure16">{{recipeinfo.strMeasure6}} {{recipeinfo.strIngredient6}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure17">{{recipeinfo.strMeasure7}} {{recipeinfo.strIngredient7}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure18">{{recipeinfo.strMeasure8}} {{recipeinfo.strIngredient8}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure19">{{recipeinfo.strMeasure9}} {{recipeinfo.strIngredient9}}</li>
+                                <li class="label" *ngIf="recipeinfo.strMeasure20">{{recipeinfo.strMeasure10}} {{recipeinfo.strIngredient10}}</li>
                                
                                
                             </ul>

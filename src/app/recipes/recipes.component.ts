@@ -8,6 +8,9 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css']
 })
+/**
+ * @author:shubhangi
+ */
 export class RecipesComponent implements OnInit {
   sampleId: any;
   catId :any;
@@ -15,7 +18,7 @@ export class RecipesComponent implements OnInit {
   val:String ="false";
  
   constructor(private apiService: ApiService,private httpClient: HttpClient,private route: ActivatedRoute) { }
-
+//fetching data of each recipe based on its id
   async ngOnInit() {
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.sampleId = id;

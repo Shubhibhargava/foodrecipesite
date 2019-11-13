@@ -6,8 +6,8 @@
 
 <div class="sidenav">
   <!-- displaying all categories -->
-  <a (click)="getCategoryrecipe(category.strCategory)"   class="highlight">chicken</a>
-  <a (click)="getCategoryrecipe(category.strCategory)"  *ngFor="let category of categories" (click)="selectrecipe($event)"  routerLinkActive="active">{{category.strCategory}}</a>
+ 
+  <a (click)="getCategoryrecipe(category.strCategory)" (click)="updateCategory(category.strCategory)" [ngClass] = "(category.strCategory == [actCat])?'highlight':'non-highlight'"  *ngFor="let category of categories"   routerLinkActive="active" >{{category.strCategory}}</a>
   
 </div>
 

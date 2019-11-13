@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
  * @author:shubhangi
  */
 export class ApiService {
-
+  activatedCategory:any ="Beef";
   localUrl: any;
   receivedFilter: EventEmitter<any>; //created an eventemitter
   recievedID: EventEmitter<any>;//created an eventemitter
@@ -61,11 +61,29 @@ export class ApiService {
     console.log(this.localUrl);
 
     }
+    /**
+     * @returns recipes
+     */
     getRecipeinfo(){
       const href = 'https://www.themealdb.com/api/json/v1/1/search.php?f=f';
       
   
       return this.httpClient.get(href);
+    }
+    /**
+     * 
+     */
+    getActivatedCategory() {
+      return this.activatedCategory;
+      }
+      /**
+       * 
+       * @param newCategory 
+       */
+    setActivatedCategory(newCategory: string) {
+      // console.log(this.activatedCategory);
+      this.activatedCategory = newCategory;
+      console.log(this.activatedCategory);
     }
 
 }

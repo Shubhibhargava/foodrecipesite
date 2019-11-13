@@ -104,22 +104,20 @@
             <div class="row">
                 <div class="col-12">
                     <div class="contact-form-area">
-                        <form id="contactForm" method="post">
+                        <form id="contactForm" method="post"  [formGroup]="contactForm">
                             <div class="row">
                                 <div class="col-12 col-lg-6">
-                                    <input type="text" class="form-control" id="name" name="name"  placeholder="Name">
+                                    <input type="text" class="form-control" id="name" formControlName="Name"  placeholder="Name">
                                 </div>
                                 <div class="col-12 col-lg-6">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail">
+                                    <input type="email" class="form-control" id="email" formControlName="Email" placeholder="E-mail">
                                 </div>
+                               
                                 <div class="col-12">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                </div>
-                                <div class="col-12">
-                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" placeholder="Message"></textarea>
+                                    <textarea name="message" class="form-control" id="message" cols="30" rows="10" formControlName="Message" placeholder="Message"></textarea>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button class="btn delicious-btn mt-30" type="submit">Send</button>
+                                    <button class="btn delicious-btn mt-30" (click)="onSubmit()" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>

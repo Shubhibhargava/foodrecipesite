@@ -9,13 +9,20 @@ import { ApiService } from 'src/app/shared/api.service';
  * @author: shubhangi
  */
 export class SidebarComponent implements OnInit {
-  el :any;
+ selected:any;
   categories = [];
-  constructor(private apiService: ApiService,private renderer: Renderer) { }
+  private actCat;
+
+  constructor(private apiService: ApiService,private renderer: Renderer) {
+    this.actCat = this.apiService.getActivatedCategory();
+    
+   }
 /**
  * fetching data from api
  */
   ngOnInit() {
+    this.selected="beef";
+    console.log(this.selected);
     this.apiService.getCategories().subscribe((data: any[])=>{
       this.categories = data;
       const map = Object.keys(this.categories).map(key => ({type: key, value: this.categories[key]}));
@@ -35,26 +42,12 @@ export class SidebarComponent implements OnInit {
       console.log(id);
       this.apiService. getCategoryrecipe(id);
     }
-    selectrecipe(event){
-    
-      if(this.renderer.selectRootElement('.highlight')){
-        this.el =this.renderer.selectRootElement('.highlight');
-        console.log(this.el);
-        //this.removeclass(this.el);
-        event.srcElement.classList.add("highlight");
-        console.log("hii");
-        console.log(event.srcElement);
-         
-       
-      }
-     
-        
-      
+    updateCategory(cat:string){
+      this.apiService.setActivatedCategory(cat);
+      this.actCat = this.apiService.getActivatedCategory();
+      console.log(this.actCat);
     }
-    removeclass(el){
-      
-     el.classList.remove("highlight") ;
-    }
+   
   
   }
   

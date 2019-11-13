@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
   constructor(private apiService: ApiService,  ) { 
     //options of navbar
     this.navelements.push(new navelement('home'),
-    // new navelement('recipes'),
+    new navelement('recipes'),
     new navelement('categories'),
     
     new navelement('contact'),

@@ -17,7 +17,7 @@ export class FooterComponent implements OnInit {
 
   constructor() { 
     
-    this.links.push('home', 'categories','contact');
+    this.links.push('home','recipes', 'categories','contact');
     
     this.CP = "© 2019 Copyright:";
     this.site = "Delicious.com";

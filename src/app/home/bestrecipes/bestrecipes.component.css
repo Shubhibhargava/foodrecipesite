@@ -8,8 +8,8 @@
     z-index: 1; 
     padding: 50px;}
     .single-best-receipe-area img {
-        height: 300px;
-        width: 300px;
+        
+        width: 100%;
       border-bottom: 3px solid #40ba37; }
     .single-best-receipe-area .receipe-content {
       padding-top: 30px;

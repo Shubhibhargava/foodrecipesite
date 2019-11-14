@@ -18,6 +18,7 @@ export class AllrecipesComponent implements OnInit {
  * subscriping to the data recieved from service
  */
   ngOnInit() {
+    //fetching all recipes from api
     this.apiService.getrecipes().subscribe((data: any[])=>{
       this.products = data;
       const map = Object.keys(this.products).map(key => ({type: key, value: this.products[key]}));

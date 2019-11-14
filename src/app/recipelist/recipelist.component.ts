@@ -26,6 +26,9 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './recipelist.component.html',
   styleUrls: ['./recipelist.component.css']
 })
+/**
+ * @author:shubahngi
+ */
 export class RecipelistComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name'];
  dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -41,36 +44,32 @@ export class RecipelistComponent implements OnInit {
     symbol: ''
   };
   ngOnInit() {
-
+//filtering according to position
     this.positionFilter.valueChanges.subscribe((positionFilterValue) => {
       this.filteredValues['position'] = positionFilterValue;
       this.dataSource.filter = JSON.stringify(this.filteredValues);
       setTimeout(() => this.dataSource.paginator = this.paginator);
     });
-
+//filtering according to name
     this.nameFilter.valueChanges.subscribe((nameFilterValue) => {
       this.filteredValues['name'] = nameFilterValue;
       this.dataSource.filter = JSON.stringify(this.filteredValues);
     });
-
+//calling the custom search function
     this.dataSource.filterPredicate = this.customFilterPredicate();
 
   }
-
+//global filter
   applyFilter(filter) {
     this.globalFilter = filter;
     this.dataSource.filter = JSON.stringify(this.filteredValues);
   }
 
-  // numFilter(filterValue: string) {
-  //   this.dataSource.filter = filterValue.trim().toLowerCase();
-  //   this.dataSource.filterPredicate = (data: any, fitlerString: string) => {
-
-  //       return data.position == filterValue;
-  //   };
-  //   this.dataSource.filter = filterValue;
-  // }
-
+  
+/**
+ * for local searching
+ * @returns: myFilterPredicate
+ */
   customFilterPredicate() {
     const myFilterPredicate = (data: PeriodicElement, filter: string): boolean => {
       var globalMatch = !this.globalFilter;

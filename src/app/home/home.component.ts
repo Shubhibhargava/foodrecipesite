@@ -9,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
  * @author:shubhangi
  */
 export class HomeComponent implements OnInit {
+  title = 'Delicious';
 
   constructor() { }
 
   ngOnInit() {
   }
+  
 
 }

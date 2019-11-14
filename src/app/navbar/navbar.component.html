@@ -1,13 +1,13 @@
 <!-- navbar wrapper -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-fixed-top">
   <!-- logo image -->
-    <a routerLink="/home"><img class="logoimg" src="assets/img/core-img/logo.png" alt="" ></a>
+    <a routerLink="/home" (click)="setDocTitle( 'Delicious-home' )"><img class="logoimg" src="assets/img/core-img/logo.png" alt="" ></a>
     
   <!-- navbar options -->
     <div class="collapse navbar-collapse nav-element" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item " *ngFor="let navelement of navelements">
-          <a class="nav-link navfont" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a>
+          <a class="nav-link navfont" (click)="setDocTitle('Delicious-'+navelement.element )" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a>
         </li>
         
        
@@ -15,9 +15,11 @@
         
       </ul>
       <!-- search bar -->
-      <form  (ngSubmit)="submitForm(box.value)" class="form-inline my-2 my-lg-0">
-        <input #box ng-keyup="submitForm(box.value)" class="form-control mr-sm-2" type="search"  placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" routerLink="/search">Search</button>
+      <form [formGroup]="searchForm"  (ngSubmit)="submitForm(box.value)" class="form-inline my-2 my-lg-0">
+        <div>
+        <input #box  class="form-control mr-sm-2" type="search"  formControlName="Name" placeholder="Search" aria-label="Search"></div>
+       
+        <button [disabled]="! searchForm.valid" class="btn  my-2 my-sm-0" type="submit" routerLink="/search"><i class="fa fa-search"></i></button>
       </form>
     </div>
   </nav>

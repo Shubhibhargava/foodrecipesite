@@ -20,6 +20,7 @@ export class RecipesComponent implements OnInit {
   constructor(private apiService: ApiService,private httpClient: HttpClient,private route: ActivatedRoute) { }
 //fetching data of each recipe based on its id
   async ngOnInit() {
+    //fetchimg id from routerlink
     let id = parseInt(this.route.snapshot.paramMap.get('id'));
     this.sampleId = id;
    

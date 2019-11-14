@@ -24,6 +24,7 @@
     "@ng-bootstrap/ng-bootstrap": "^5.1.4",
     "bootstrap": "^4.3.1",
     "ng-image-slider": "^2.1.0",
+    "ng4-loading-spinner": "^1.2.3",
     "ngx-bootstrap": "^5.2.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

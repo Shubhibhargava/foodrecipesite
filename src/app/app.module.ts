@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule , Title} from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AlertModule } from 'ngx-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
@@ -27,6 +27,9 @@ import {MatInputModule} from '@angular/material';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContactusComponent } from './contactus/contactus.component';
+import { ContactService } from './shared/contact.service';
+import { UploadService } from './shared/upload.service';
+import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
 
 @NgModule({
   declarations: [
@@ -58,9 +61,10 @@ import { ContactusComponent } from './contactus/contactus.component';
     MatInputModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
+    Ng4LoadingSpinnerModule.forRoot(),
     AlertModule.forRoot()
   ],
-  providers: [ApiService],
+  providers: [ApiService,Title,ContactService,UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

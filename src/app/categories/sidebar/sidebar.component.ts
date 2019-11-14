@@ -9,20 +9,19 @@ import { ApiService } from 'src/app/shared/api.service';
  * @author: shubhangi
  */
 export class SidebarComponent implements OnInit {
- selected:any;
+ 
   categories = [];
-  private actCat;
+   actCat;
 
   constructor(private apiService: ApiService,private renderer: Renderer) {
-    this.actCat = this.apiService.getActivatedCategory();
+    this.actCat = this.apiService.getActivatedCategory(); //selecting a category initially
     
    }
 /**
  * fetching data from api
  */
   ngOnInit() {
-    this.selected="beef";
-    console.log(this.selected);
+    
     this.apiService.getCategories().subscribe((data: any[])=>{
       this.categories = data;
       const map = Object.keys(this.categories).map(key => ({type: key, value: this.categories[key]}));
@@ -42,6 +41,11 @@ export class SidebarComponent implements OnInit {
       console.log(id);
       this.apiService. getCategoryrecipe(id);
     }
+    /**
+     * 
+     * @param cat 
+     * update the selected category on click
+     */
     updateCategory(cat:string){
       this.apiService.setActivatedCategory(cat);
       this.actCat = this.apiService.getActivatedCategory();

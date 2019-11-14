@@ -10,10 +10,10 @@ import { Component, OnInit } from '@angular/core';
  */
 export class FooterComponent implements OnInit {
   
-  private links = []; //array used for store quick links
+   links = []; //array used for store quick links
  
-  private CP;
-  private site;
+   CP;
+   site;
 
   constructor() { 
     

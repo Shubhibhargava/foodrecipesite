@@ -22,6 +22,7 @@ export class SearchresultComponent implements OnInit {
     this.apiService.receivedFilter.subscribe((param: any[]) => {
      //fetching the url from service
       this.catId = param;
+      
       //sending http request to fetched url
      this.httpClient.get(this.catId).subscribe((param: any[]) => {
      

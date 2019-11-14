@@ -108,16 +108,48 @@
                             <div class="row">
                                 <div class="col-12 col-lg-6">
                                     <input type="text" class="form-control" id="name" formControlName="Name"  placeholder="Name">
+                                    <div *ngIf="f.Name.invalid && (f.Name.dirty || f.Name.touched)"
+                                        class="alert alert-danger" id="alert">
+                                        <div *ngIf="f.Name.errors.required">
+                                        Name is required.
+                                        </div>
+                                        <div *ngIf="f.Name.errors.minlength">
+                                        Name must be at least 4 characters long.
+                                        </div>
+                                        </div>
                                 </div>
+
                                 <div class="col-12 col-lg-6">
                                     <input type="email" class="form-control" id="email" formControlName="Email" placeholder="E-mail">
+                                    <div *ngIf="f.Email.invalid && (f.Email.dirty || f.Email.touched)"
+                                    class="alert alert-danger" id="alert">
+                                    <div *ngIf="f.Email.errors.required">
+                                    Email is required.
+                                    </div>
+                                    <div *ngIf="f.Email.errors.email">
+                                    Please enter a valid email address.
+                                    </div>
+                                    </div>
                                 </div>
                                
-                                <div class="col-12">
+                                <div class="col-12 col-lg-6">
                                     <textarea name="message" class="form-control" id="message" cols="30" rows="10" formControlName="Message" placeholder="Message"></textarea>
+                                    <div *ngIf="f.Message.invalid && (f.Message.dirty || f.Message.touched)"
+                                    class="alert alert-danger" id="alert">
+                                    <div *ngIf="f.Email.errors.required">
+                                    Message is required.
+                                    </div>
+                                   
+                                    </div>
                                 </div>
+                                <div class="col-12 col-lg-6">
+                                <input type="file" name="avatar"  class="form-control" formControlName="Image"/>
+                                <div class="image-preview mb-3" *ngIf="previewUrl">
+                                <img [src]="previewUrl" height="300" />
+                                </div>
+                            </div>
                                 <div class="col-12 text-center">
-                                    <button class="btn delicious-btn mt-30" (click)="onSubmit()" type="submit">Send</button>
+                                    <button class="btn delicious-btn mt-30" (click)="onSubmit()" [disabled]="! contactForm.valid" type="submit">Send</button>
                                 </div>
                             </div>
                         </form>
@@ -127,26 +159,7 @@
         </div>
     </div>
     <!-- ##### Contact Form Area End ##### -->
-    <script>
-    window.onload = function() {
-
-        // Check for LocalStorage support.
-        if (localStorage) {
-      
-          // Add an event listener for form submissions
-          document.getElementById('contactForm').addEventListener('submit', function() {
-            // Get the value of the name field.
-            var name = document.getElementById('name').value;
-      
-            // Save the name in localStorage.
-            localStorage.setItem('name', name);
-            console.log(localStorage.getItem('name'));
-          });
-      
-        }
-      
-      }
-    </script>
+    
    
 </body>
 

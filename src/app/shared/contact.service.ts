@@ -18,7 +18,7 @@ constructor(private httpClient: HttpClient) { }
 * @about: Call Php file runnning on server
 */
 public uploadData(data) {
-let uploadURL = `${this.SERVER_URL}/contact.php`;
-return this.httpClient.post<any>(uploadURL, data);
+let uploadURL = `${this.SERVER_URL}/contact.php`; //path to script
+return this.httpClient.post<any>(uploadURL, data); //sending http request to script
 }
 }

@@ -13,6 +13,7 @@ export class SmallrecipesComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    //recieving data from api
     this.apiService.getrecipes().subscribe((data: any[])=>{
       this.products = data;
       const map = Object.keys(this.products).map(key => ({type: key, value: this.products[key]}));

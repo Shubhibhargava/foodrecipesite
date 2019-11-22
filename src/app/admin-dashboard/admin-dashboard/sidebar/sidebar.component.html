@@ -1,0 +1,91 @@
+
+<div id="content">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light">
+           <a class="navbar-brand">Delicious</a>
+        <div class="container-fluid">
+            
+            <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="clickEvent()"  
+            >
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+
+        </div>
+    </nav> -->
+    <nav class="navbar navbar-expand-lg navbar-light  navbar-fixed-top">
+            <!-- logo image -->
+              <a routerLink="/home" (click)="setDocTitle( 'Delicious-home' )"><img class="logoimg" src="assets/img/core-img/logo.png" alt="" ></a>
+              
+            <!-- navbar options -->
+              <div class="collapse navbar-collapse nav-element" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                        <img src="assets/img/icons8-menu-24.png" id="sidebarCollapse" class="nav-link navfont" (click)="clickEvent()"  
+                        >
+                    <!-- <a class="nav-link navfont" (click)="setDocTitle('Delicious-'+navelement.element )" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a> -->
+                  </li>
+                  
+                 
+                 
+                  
+                </ul>
+                <!-- search bar -->
+                <!-- <form [formGroup]="searchForm"  (ngSubmit)="submitForm(box.value)" class="form-inline my-2 my-lg-0">
+                  <div>
+                  <input #box  class="form-control mr-sm-2" type="search"  formControlName="Name" placeholder="Search" aria-label="Search"></div>
+                 
+                  <button [disabled]="! searchForm.valid" class="btn  my-2 my-sm-0" type="submit" routerLink="/search"><i class="fa fa-search"></i></button>
+                </form> -->
+              </div>
+            </nav>
+</div>
+
+
+<div class="wrapper">
+    <!-- Sidebar -->
+    <nav id="sidebar" [ngClass]="status ? 'active' : 'danger'">
+        
+
+        <ul class="list-unstyled components">
+           
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Home</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                        <a href="#">Home 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Home 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">About</a>
+            </li>
+            <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Page 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Page 3</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Portfolio</a>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+</div>

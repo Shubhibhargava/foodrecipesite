@@ -1,0 +1,15 @@
+.modal{
+    display: none;
+    
+}
+.modal input{
+    border-radius: 10px;
+}
+.modalimg{
+    height: 300px;
+    width: 100%;
+}
+
+
+
+

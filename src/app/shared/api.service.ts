@@ -2,6 +2,9 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
+import { Observable } from 'rxjs';
+import { User } from './recipes.model';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -9,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
  * @author:shubhangi
  */
 export class ApiService {
-  
+  private serviceUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=';
   activatedCategory:any ="Beef";
   localUrl: any;
   receivedFilter: EventEmitter<any>; //created an eventemitter
@@ -18,6 +21,10 @@ export class ApiService {
     this.receivedFilter = new EventEmitter<any>();
     this.recievedID = new EventEmitter<any>();
    
+  }
+  getUser(): Observable<User[]> {
+    console.log(this.httpClient.get<User[]>(this.serviceUrl));
+    return this.httpClient.get<User[]>(this.serviceUrl);
   }
   /**
    * @returns all recipes from api

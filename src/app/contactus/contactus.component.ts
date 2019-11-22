@@ -18,7 +18,7 @@ export class ContactusComponent implements OnInit {
     Name: ['', [Validators.required, Validators.minLength(4)]],
     Email: ['',[Validators.required, Validators.email]],
     Message: ['', Validators.required],
-    Image:['',Validators.required]
+  //  Image:['',Validators.required]
   });
   //variable for image upload
   fileData: File = null;
@@ -40,7 +40,7 @@ export class ContactusComponent implements OnInit {
     formData.append('Name', this.contactForm.get('Name').value);
     formData.append('Email', this.contactForm.get('Email').value);
     formData.append('Message', this.contactForm.get('Message').value);
-    formData.append('Image', this.contactForm.get('Image').value);
+   // formData.append('Image', this.contactForm.get('Image').value);
     //Calling Contact Service's UploadData method
     this.upload.uploadData(formData).subscribe(
     (res) => {
@@ -57,16 +57,16 @@ export class ContactusComponent implements OnInit {
     );
      //Calling Upload Service's UploadFile method
     
-    this.uploadService.uploadFile(formData).subscribe(
-    (res) => {
-    this.uploadResponse = res;
-    console.log(res);
-    alert("success");
-    },
-    (err) => {
-    console.log(err);
-    }
-    );
+    // this.uploadService.uploadFile(formData).subscribe(
+    // (res) => {
+    // this.uploadResponse = res;
+    // console.log(res);
+    // alert("success");
+    // },
+    // (err) => {
+    // console.log(err);
+    // }
+    // );
     
     
     }

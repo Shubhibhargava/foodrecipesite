@@ -21,15 +21,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule ,ReactiveFormsModule}   from '@angular/forms';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { RecipelistComponent } from './recipelist/recipelist.component';
-import { MatTableModule } from '@angular/material/table';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DataTablesModule } from 'angular-datatables';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ContactService } from './shared/contact.service';
 import { UploadService } from './shared/upload.service';
 import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
+  //Import the layout configuration.
+import { LayoutModule } from 'angular-admin-lte';   //Import the layout module.
+import { adminLteConf } from './admin-lte.conf';
+import { AdminpanelComponent } from './adminpanel/adminpanel.component';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard/admin-dashboard.component';
+import { JwmodalComponent } from './jwmodal/jwmodal.component';
+
 
 @NgModule({
   declarations: [
@@ -49,6 +53,9 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     SearchresultComponent,
     RecipelistComponent,
     ContactusComponent,
+    AdminpanelComponent,
+    JwmodalComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -56,13 +63,12 @@ import { Ng4LoadingSpinnerModule } from 'ng4-loading-spinner';
     HttpClientModule,
     NgbModule,
     FormsModule ,ReactiveFormsModule,
-    MatTableModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatPaginatorModule,
-    BrowserAnimationsModule,
+    DataTablesModule,
     Ng4LoadingSpinnerModule.forRoot(),
-    AlertModule.forRoot()
+    AlertModule.forRoot(),
+    LayoutModule.forRoot(adminLteConf),
+    AdminDashboardModule
+   
   ],
   providers: [ApiService,Title,ContactService,UploadService],
   bootstrap: [AppComponent]

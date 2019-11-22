@@ -1,0 +1,196 @@
+<div>
+    <h1>Home</h1>
+    <p>{{bodyText}}</p>
+    
+        <input type="text" #box>
+    
+    <button   (click)="getName(box.value); openModal('custom-modal-1')">Open Modal 1</button>
+    <button (click)="openModal('custom-modal-2')">Open Modal 2</button>
+</div>
+
+<jw-modal id="custom-modal-1" class="modal">
+    
+                    <div *ngIf="meals !== null; then box1 else box2"></div>
+                    <ng-template #box1><form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+                            <!-- img row -->
+                            <div class="row">
+                                    <div class="form-group col">
+                                        
+                                        <img *ngIf="meals" [src]="details.strMealThumb" class="modalimg" >      
+                                                
+                                        
+                                    </div>
+                                </div>
+                            <!-- first row name -->
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="firstName">Name</label>
+                                   
+                                    <input type="text" *ngIf="meals" name="name"  formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" value="{{details.strMeal}}" />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- second row -->
+                             <div class="row">
+                                <div class="form-group col">
+                                    <label for="username">Category</label>
+                                   
+                                    <input type="text" *ngIf="meals" name="category" formControlName="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" value="{{details.strCategory}}"/>
+                                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                                        <div *ngIf="f.category.errors.required">Username is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col">
+                                        <label for="username">Area</label>
+                                       
+                                        <input type="text" name="area" *ngIf="meals" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }" value="{{details.strArea}}"/>
+                                        <div *ngIf="submitted && f.area.errors" class="invalid-feedback">    
+                                            <div *ngIf="f.area.errors.required">Username is required</div>
+                                        </div>
+                                    </div>
+                                    </div>
+                            
+                            <!-- third row -->
+                                    <div class="row">
+                                        <div *ngFor="let ing of ingredients" >
+                                            <div class="form-group col">
+                                                <label for="password">Ingredients</label>
+                                                <input type="text"  name="ingredients" formControlName="ingredient" class="form-control" [ngClass]="{ 'is-invalid': submitted}" value="{{ing}}"/>
+                                            </div>
+                                        </div>
+                                        <div *ngFor="let mea of measurements">
+                                            <div class="form-group col mea">
+                                                <label for="password">measurements</label>
+                                                <input type="text" name="measurements" formControlName="measurement" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" value="{{mea}}" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                   
+                                
+                            
+                            
+                            <!-- fourth row  -->
+                            <div class="row">
+                                    <div class="form-group col">
+                                        <label for="password">Instructions</label>
+                                        <input type="text" name="instructions" *ngIf="meals" formControlName="instruction" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }" value="{{details.strInstructions}}" />
+                                        <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
+                                            <div *ngIf="f.instruction.errors.required">Password is required</div>
+                                           
+                                        </div>
+                                    </div>
+                            </div>
+                    
+                            <!-- final row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <button [disabled]="loading" class="btn btn-primary">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Register
+                                    </button>
+                                    <a routerLink="/login" class="btn btn-link">Cancel</a>
+                                </div>
+                            </div>
+                        </form></ng-template>
+                    <ng-template #box2><form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                            <!-- img row -->
+                            <div class="row">
+                                    <div class="form-group col">
+                                        
+                                        <img *ngIf="meals" [src]="details.strMealThumb" class="modalimg" >      
+                                        <input *ngIf="! meals" type="file">        
+                                        
+                                    </div>
+                                </div>
+                            <!-- first row name -->
+                            <div class="row">
+                                <div class="form-group col">
+                                    <label for="firstName">Name</label>
+                                    
+                                    <input type="text" *ngIf="!meals" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+                                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                                    </div>
+                                </div>
+                            </div>
+                             <!-- second row -->
+                             <div class="row">
+                                <div class="form-group col">
+                                    <label for="username">Category</label>
+                                    <input type="text" *ngIf="!meals" formControlName="category" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.category.errors }" />
+                                    <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                                        <div *ngIf="f.category.errors.required">Username is required</div>
+                                    </div>
+                                </div>
+                                <div class="form-group col">
+                                        <label for="username">Area</label>
+                                        
+                                        <input type="text" *ngIf="!meals" formControlName="area" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.area.errors }" />
+                                        <div *ngIf="submitted && f.area.errors" class="invalid-feedback">
+                                            <div *ngIf="f.area.errors.required">Username is required</div>
+                                        </div>
+                                    </div>
+                            </div>
+                            <!-- third row -->
+                            <div class="row">
+                               
+                                        <div class="form-group col"><label for="contents">Contents</label><i class="fa fa-plus" (click)="addContents()"></i>&nbsp;<i class="fa fa-minus" (click)="removeContents()"></i> 
+                                            <div formArrayName="contents" *ngFor="let item of userForm.get('contents').controls; let i = index;">
+                                                <div [formGroup]="item" class="row">
+                                                    <div class="form-group col">
+                                                        <label for="password">Ingredients</label>
+                                                        <input type="text" formControlName="ingredients" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.ingredients.errors}" />
+                                                        <div *ngIf="submitted && f.ingredients.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.password.errors.required">Password is required</div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group col">
+                                                        <label for="password">measurements</label>
+                                                        <input type="text" formControlName="measurements" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.measurements.errors }" />
+                                                        <div *ngIf="submitted && f.measurements.errors" class="invalid-feedback">
+                                                            <div *ngIf="f.measurements.errors.required">Password is required</div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>   
+                            </div>
+                            
+                            
+                            <!-- fourth row  -->
+                            <div class="row">
+                                    <div class="form-group col">
+                                        <label for="password">Instructions</label>
+                                        <input type="text" *ngIf="!meals" formControlName="instruction" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.instruction.errors }" />
+                                        <div *ngIf="submitted && f.instruction.errors" class="invalid-feedback">
+                                            <div *ngIf="f.instruction.errors.required">Password is required</div>
+                                            
+                                        </div>
+                                    </div>
+                            </div>
+                    
+                            <!-- final row -->
+                            <div class="row">
+                                <div class="form-group">
+                                    <button [disabled]="loading" class="btn btn-primary">
+                                        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                        Register
+                                    </button>
+                                    <a routerLink="/login" class="btn btn-link">Cancel</a>
+                                </div>
+                            </div>
+                        </form></ng-template>
+                    <button (click)="closeModal('custom-modal-1');">Close</button>
+                
+
+    
+</jw-modal>
+
+<jw-modal id="custom-modal-2">
+    <h1 style="height:1000px">A Tall Custom Modal!</h1>
+    <button (click)="closeModal('custom-modal-2');">Close</button>
+</jw-modal>

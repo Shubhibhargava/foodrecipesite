@@ -10,7 +10,7 @@ providedIn: 'root'
 */
 export class ContactService {
 
-SERVER_URL: string = "http://localhost/";
+SERVER_URL: string = "http://192.168.18.135/";
 constructor(private httpClient: HttpClient) { }
 /**
 * 

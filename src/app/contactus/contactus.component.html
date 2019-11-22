@@ -21,7 +21,7 @@
 <body>
   
 
-    
+        <app-navbar></app-navbar>
 
     
     <!-- ##### Breadcumb Area Start ##### -->
@@ -142,12 +142,12 @@
                                    
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-6">
+                                <!-- <div class="col-12 col-lg-6">
                                 <input type="file" name="avatar"  class="form-control" formControlName="Image"/>
                                 <div class="image-preview mb-3" *ngIf="previewUrl">
                                 <img [src]="previewUrl" height="300" />
                                 </div>
-                            </div>
+                            </div> -->
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" (click)="onSubmit()" [disabled]="! contactForm.valid" type="submit">Send</button>
                                 </div>
@@ -159,8 +159,7 @@
         </div>
     </div>
     <!-- ##### Contact Form Area End ##### -->
-    
-   
+    <app-footer></app-footer>
 </body>
 
 </html>

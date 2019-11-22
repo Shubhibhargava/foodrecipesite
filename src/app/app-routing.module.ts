@@ -8,6 +8,7 @@ import { RecipelistComponent } from './recipelist/recipelist.component';
 import { ContactusComponent } from './contactus/contactus.component';
 
 
+
 const routes: Routes = [
   {path : '', redirectTo: '/home', pathMatch: 'full'},
     {path : 'home', component: HomeComponent},
@@ -15,12 +16,15 @@ const routes: Routes = [
     {path : 'recipes', component: RecipelistComponent},
     {path : 'recipe/:id', component: RecipesComponent},
     {path : 'search', component: SearchresultComponent},
-    {path : 'contact', component: ContactusComponent}
+    {path : 'contact', component: ContactusComponent},
+    { path: 'admin',
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(mod => mod.AdminDashboardModule) },
     
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes),
+    RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

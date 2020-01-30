@@ -15,6 +15,7 @@ export class ApiService {
   private serviceUrl = 'https://www.themealdb.com/api/json/v1/1/filter.php?i=';
   activatedCategory:any ="Beef";
   localUrl: any;
+  serach:any;
   receivedFilter: EventEmitter<any>; //created an eventemitter
   recievedID: EventEmitter<any>;//created an eventemitter
   constructor(private httpClient: HttpClient) { 
@@ -65,11 +66,16 @@ export class ApiService {
  */
     getSearch(searchText:any){
       
-      this.localUrl = 'https://www.themealdb.com/api/json/v1/1/search.php?s='+searchText;
-    this.receivedFilter.emit(this.localUrl);
-    console.log(this.localUrl);
+      this.serach = 'https://www.themealdb.com/api/json/v1/1/search.php?s='+searchText;
+    // this.receivedFilter.emit(this.localUrl);
+    // console.log(this.localUrl);
+    // return (this.localUrl);
+    
       
 
+    }
+    setSearch(){
+      return this.httpClient.get(this.serach);
     }
     /**
      * @returns recipe detaials

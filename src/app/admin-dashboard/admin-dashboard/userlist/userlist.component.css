@@ -1,0 +1,19 @@
+.dt{
+    margin-left: 250px;
+    margin-top: 50px;
+    padding: 15px;
+}
+h2{
+    text-align: center;
+    padding: 10px;
+}
+.card{
+    border-top: 3px solid #47748b;
+    border-bottom: 3px solid #47748b;
+    
+    margin:30px;
+    width: 1000px;
+}
+th, td {
+    text-align: center;
+}

@@ -1,5 +1,6 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
+
 .logoimg{
     height: 50px;
 }
@@ -10,6 +11,7 @@ nav{
 .wrapper {
     display: flex;
     align-items: stretch;
+    
 }
 
 #sidebar {
@@ -47,10 +49,7 @@ a[data-toggle="collapse"] {
 
 
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
-}
+
 
 p {
     font-family: 'Poppins', sans-serif;
@@ -75,12 +74,13 @@ a, a:hover, a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #323334;
+    background: #1E6176;
 }
 
 #sidebar ul.components {
     padding: 20px 0;
     border-bottom: 1px solid #47748b;
+    cursor: pointer;
 }
 
 #sidebar ul p {
@@ -105,7 +105,7 @@ a, a:hover, a:focus {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #424444;
+    background: #1E6176;
 }
 .nav-element{
     margin-left: 80px;

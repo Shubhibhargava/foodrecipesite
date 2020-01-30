@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../shared/contact.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import { UploadService } from '../shared/upload.service';
+import { HttpClient } from '@angular/common/http';
+import { AuthenticationService } from '../shared/authetication.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +16,7 @@ import { UploadService } from '../shared/upload.service';
  * @author:shubhangi
  */
 export class ContactusComponent implements OnInit {
-  private showSuccess;
+  success:any;
   contactForm = this.fb.group({
     Name: ['', [Validators.required, Validators.minLength(4)]],
     Email: ['',[Validators.required, Validators.email]],
@@ -21,13 +24,9 @@ export class ContactusComponent implements OnInit {
   //  Image:['',Validators.required]
   });
   //variable for image upload
-  fileData: File = null;
-  previewUrl:any = null;
-  fileUploadProgress: string = null;
-  uploadedFilePath: string = null;
-  uploadResponse: any;
+  
 
-  constructor(private fb: FormBuilder,private upload: ContactService,private uploadService: UploadService) { }
+  constructor(private fb: FormBuilder,private upload: ContactService,private router: Router,private http:HttpClient,private authenticationService:AuthenticationService) { }
 
   ngOnInit() {
   }
@@ -40,34 +39,13 @@ export class ContactusComponent implements OnInit {
     formData.append('Name', this.contactForm.get('Name').value);
     formData.append('Email', this.contactForm.get('Email').value);
     formData.append('Message', this.contactForm.get('Message').value);
-   // formData.append('Image', this.contactForm.get('Image').value);
-    //Calling Contact Service's UploadData method
-    this.upload.uploadData(formData).subscribe(
-    (res) => {
-    this.upload = res;
-    this.showSuccess = true;
-    setTimeout(()=>{
-    this.showSuccess = false;
-    },2500);
+   
+    this.http.post('http://192.168.18.135:8000/api/contactus', formData).subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    )
+    this.success="true";
     this.contactForm.reset();
-    },
-    (err) => { 
-    console.log(err);
-    }
-    );
-     //Calling Upload Service's UploadFile method
-    
-    // this.uploadService.uploadFile(formData).subscribe(
-    // (res) => {
-    // this.uploadResponse = res;
-    // console.log(res);
-    // alert("success");
-    // },
-    // (err) => {
-    // console.log(err);
-    // }
-    // );
-    
     
     }
     /**
@@ -76,7 +54,10 @@ export class ContactusComponent implements OnInit {
     get f() { return this.contactForm.controls; }
 
 
-   
+    logout() {
+      this.authenticationService.logout();
+      this.router.navigate(['/login']);
+  }
       
 
 }

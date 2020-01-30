@@ -1,0 +1,57 @@
+
+.modal{
+    display: none;
+    
+}
+h2{
+    text-align: center;
+    padding: 10px;
+}
+.recipeimg{
+    margin-top: 20px;
+    height: 200px;
+    width: 450px;;
+}
+h1{
+    margin-left: 70px;
+}
+.instruction{
+    margin-top: 20px;
+   
+}
+.instruction h4{
+    font-weight: bold;
+}
+.ingredients{
+    margin-top: 20px;
+   
+}
+.ingredients h4{
+    font-weight: bold;
+}
+.measurements{
+    margin-top: 20px;
+   
+}
+.measurements h4{
+    font-weight: bold;
+}
+
+.card {
+    padding: 10px;
+}
+
+.card{  
+    border-top: 3px solid #47748b;
+    border-bottom: 3px solid #47748b;
+    margin:30px;
+    width: 1000px;
+}
+i {
+    color: #47748b;
+    cursor: pointer;
+}
+
+th, td {
+    text-align: center;
+}

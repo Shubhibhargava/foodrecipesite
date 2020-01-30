@@ -6,6 +6,9 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { SearchresultComponent } from './searchresult/searchresult.component';
 import { RecipelistComponent } from './recipelist/recipelist.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AuthGuard } from './helpers/auth.guard';
 
 
 
@@ -15,10 +18,13 @@ const routes: Routes = [
     {path : 'categories', component: CategoriesComponent},
     {path : 'recipes', component: RecipelistComponent},
     {path : 'recipe/:id', component: RecipesComponent},
-    {path : 'search', component: SearchresultComponent},
-    {path : 'contact', component: ContactusComponent},
+    {path : 'search/:id', component: SearchresultComponent},
+    {path : 'contact', component: ContactusComponent,canActivate: [AuthGuard] },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+
     { path: 'admin',
-    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(mod => mod.AdminDashboardModule) },
+    loadChildren: () => import('./admin-dashboard/admin-dashboard.module').then(mod => mod.AdminDashboardModule),canActivate: [AuthGuard] },
     
 ];
 

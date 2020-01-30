@@ -8,6 +8,11 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item " *ngFor="let navelement of navelements">
           <a class="nav-link navfont" (click)="setDocTitle('Delicious-'+navelement.element )" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a>
+         
+        </li>
+        <li class="nav-item " *ngIf='check === "true"'>
+            <a class="nav-link navfont" (click)="logout()">Logout</a>
+            
         </li>
         
        
@@ -15,11 +20,20 @@
         
       </ul>
       <!-- search bar -->
-      <form [formGroup]="searchForm"  (ngSubmit)="submitForm(box.value)" class="form-inline my-2 my-lg-0">
-        <div>
-        <input #box  class="form-control mr-sm-2" type="search"  formControlName="Name" placeholder="Search" aria-label="Search"></div>
-       
-        <button [disabled]="! searchForm.valid" class="btn  my-2 my-sm-0" type="submit" routerLink="/search"><i class="fa fa-search"></i></button>
+      
+
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()" class="form-inline my-2 my-lg-0"> 
+   
+          <div class="form-group">
+              
+              <input type="text" #name formControlName="Name" class="form-control mr-sm-2" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+              
+          </div>
+         
+          
+      
       </form>
+      
+
     </div>
   </nav>

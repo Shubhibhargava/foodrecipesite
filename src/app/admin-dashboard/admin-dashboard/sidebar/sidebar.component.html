@@ -24,6 +24,9 @@
                         >
                     <!-- <a class="nav-link navfont" (click)="setDocTitle('Delicious-'+navelement.element )" routerLink="/{{navelement.element}}" routerLinkActive="active"  >{{navelement.element}}</a> -->
                   </li>
+                  <li>
+                       
+                  </li>
                   
                  
                  
@@ -47,45 +50,52 @@
         
 
         <ul class="list-unstyled components">
-           
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Home</a>
+                <a (click)="getName('home')">Home</a>
+            </li>
+            <li >
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle" >Recipes</a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Home 1</a>
+                        <a (click)="getName('recipes')">View All</a>
                     </li>
                     <li>
-                        <a href="#">Home 2</a>
+                        <a (click)="getName('addrecipe')">Add New</a>
                     </li>
-                    <li>
-                        <a href="#">Home 3</a>
-                    </li>
+                    
                 </ul>
             </li>
             <li>
-                <a href="#">About</a>
+                <a (click)="getName('userlist')">Users List</a>
             </li>
-            <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+            <!-- <li>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Category</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Page 1</a>
+                        <a (click)="getName('categories')">View all</a>
                     </li>
                     <li>
-                        <a href="#">Page 2</a>
+                        <a (click)="getName('addcategory')">Add new</a>
                     </li>
-                    <li>
-                        <a href="#">Page 3</a>
-                    </li>
+                    
                 </ul>
+            </li> -->
+            
+            <li>
+                <a (click)="getName('queries')">Customer queries</a>
             </li>
             <li>
-                <a href="#">Portfolio</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
+                    <a  (click)="logout()">Logout</a>
             </li>
         </ul>
     </nav>
+    <app-home *ngIf='sidename === "home"'></app-home>
+    <app-recipes *ngIf='sidename === "recipes"'></app-recipes>
+    <app-userlist *ngIf='sidename === "userlist"'></app-userlist>
+    <app-categories *ngIf='sidename === "categories"'></app-categories>
+    <app-queries *ngIf='sidename === "queries"'></app-queries>
+    <app-addrecipe *ngIf='sidename === "addrecipe"'></app-addrecipe>
+    
+
 
 </div>

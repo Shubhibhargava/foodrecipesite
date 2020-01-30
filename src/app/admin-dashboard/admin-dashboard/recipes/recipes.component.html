@@ -1,0 +1,80 @@
+
+<div class="container" style="margin-top: 40px;">
+  <div class="row">
+   
+    <div class="col-md-12">
+<div class="card">
+  <h2>Recipes</h2>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border" id="example">
+                <thead>
+                  <tr>
+                    <th>S.No.</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Area</th>
+                    <th>Actions</th>
+                   
+                  </tr>
+                  
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of recipes; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.name}}</td>
+                    <td>{{user.category}}</td>
+                    <td>{{user.area}}</td>
+                    <td><i class="fa fa-eye" (click)="openModal(user.name)"></i>&nbsp;&nbsp;
+                    <i class="fa fa-trash" (click)="delete(user.id)"></i></td>
+                    
+                   
+                  </tr>
+                  
+                </tbody>
+              </table>
+            </div>
+            </div>
+            </div>
+</div>
+         
+            <div *ngFor="let user of recipes">
+            <jw-modal id="{{user.name}}" class="modal">
+                <h1>{{user.name}}</h1>
+                
+            <div class="container">
+                    <div class="row">
+                           
+                            <img *ngIf='user.imageurl.charAt(0) ==="h" ' src="{{user.imageurl}}" alt="" class="recipeimg">
+              <img *ngIf='user.imageurl.charAt(0) !=="h" '  src="http://192.168.18.135/trivia-web-service/public/uploads/{{user.imageurl}}" alt="">
+                    </div>
+                    <div class="row">
+                        <div class="ingredients">
+    
+                                <h4>Ingredients</h4>
+                            <!-- Single Preparation Step -->
+                           <div>{{user.ingredients}}</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="measurements">
+    
+                                <h4>Measurements</h4>
+                            <!-- Single Preparation Step -->
+                           <div>{{user.measurements}}</div>
+                        </div>
+                    </div>
+                   
+
+                    <div class="row">
+                        <div class="instruction">
+
+                                <h4>Instructions</h4>
+                            <!-- Single Preparation Step -->
+                          <div>{{user.instruction}}</div>
+                        </div>
+                    </div>
+    </div>
+    
+            <button class="btn btn-warning"  (click)="closeModal(user.name);">Close</button>
+            </jw-modal>
+            
+        </div>

@@ -1,0 +1,32 @@
+<div class="dt card">
+  <h2>Users List</h2>
+        <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover compact" id="example">
+                <thead>
+                  <tr>
+                    <th>S.No.</th>
+                    <th>UserName</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                  </tr>
+                  
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                   
+                  </tr>
+                  
+                </tbody>
+                <tfoot>
+                        <tr>
+                                <th></th>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                </tfoot>
+              </table>
+            </div>

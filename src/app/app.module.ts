@@ -33,6 +33,9 @@ import { AdminpanelComponent } from './adminpanel/adminpanel.component';
 import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard/admin-dashboard.component';
 import { JwmodalComponent } from './jwmodal/jwmodal.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { AlertComponent } from './alert/alert.component';
 
 
 @NgModule({
@@ -55,6 +58,9 @@ import { JwmodalComponent } from './jwmodal/jwmodal.component';
     ContactusComponent,
     AdminpanelComponent,
     JwmodalComponent,
+    LoginComponent,
+    RegisterComponent,
+    AlertComponent,
    
   ],
   imports: [

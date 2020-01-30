@@ -150,6 +150,7 @@
                             </div> -->
                                 <div class="col-12 text-center">
                                     <button class="btn delicious-btn mt-30" (click)="onSubmit()" [disabled]="! contactForm.valid" type="submit">Send</button>
+                                    <!-- <a class="btn delicious-btn mt-30" (click)="logout()">Logout</a> -->
                                 </div>
                             </div>
                         </form>
@@ -159,6 +160,9 @@
         </div>
     </div>
     <!-- ##### Contact Form Area End ##### -->
+    <div *ngIf='success === "true"' class="alert alert-success">
+        <strong>Message sent!</strong> .
+      </div>
     <app-footer></app-footer>
 </body>
 

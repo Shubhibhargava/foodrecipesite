@@ -1,0 +1,35 @@
+/* .dt{
+    margin-left: 230px;
+    margin-top: 50px;
+     padding: 15px;
+} */
+h2{
+    text-align: center;
+    padding: 10px;
+}
+table{
+    margin-top: 20px;
+}
+.card{
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    padding: 10px;
+    margin-top: 30px;
+    border-top: 3px solid #47748b;
+    border-bottom: 3px solid #47748b;
+    
+    margin:30px;
+    width: 1000px;
+}
+i {
+    color: #47748b;
+    cursor: pointer;
+}
+
+th, td {
+    text-align: center;
+}
+.container{
+    text-align: center;
+}

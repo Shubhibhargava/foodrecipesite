@@ -6,7 +6,13 @@ import { SidebarComponent } from './admin-dashboard/sidebar/sidebar.component';
 import { AddrecipeComponent } from './admin-dashboard/addrecipe/addrecipe.component';
 import { JwmodalComponent } from './admin-dashboard/jwmodal/jwmodal.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { HomeComponent } from './admin-dashboard/home/home.component';
+import { RecipesComponent } from './admin-dashboard/recipes/recipes.component';
+import { UserlistComponent } from './admin-dashboard/userlist/userlist.component';
+import { CategoriesComponent } from './admin-dashboard/categories/categories.component';
+import { QueriesComponent } from './admin-dashboard/queries/queries.component';
+import { DataTablesModule } from 'angular-datatables';
+import { EditrecipeComponent } from './admin-dashboard/editrecipe/editrecipe.component';
 
 
 
@@ -16,17 +22,25 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     AddrecipeComponent,
     JwmodalComponent,
+    HomeComponent,
+    RecipesComponent,
+    UserlistComponent,
+    CategoriesComponent,
+    QueriesComponent,
+    EditrecipeComponent,
     
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule ,
+    DataTablesModule
     
     
   ],
   exports: [
-    AdminDashboardComponent
+    AdminDashboardComponent,
+   
   ]
   
 })

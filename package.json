@@ -27,7 +27,7 @@
     "bootstrap": "^4.3.1",
     "datatables.net": "^1.10.20",
     "datatables.net-dt": "^1.10.20",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-image-slider": "^2.1.0",
     "ng4-loading-spinner": "^1.2.3",
     "ngx-bootstrap": "^5.2.0",

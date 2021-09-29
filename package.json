@@ -25,7 +25,7 @@
     "angular-admin-lte": "^2.0.1",
     "angular-datatables": "^8.0.0",
     "bootstrap": "^4.3.1",
-    "datatables.net": "^1.10.20",
+    "datatables.net": "^1.11.3",
     "datatables.net-dt": "^1.10.20",
     "jquery": "^3.4.1",
     "ng-image-slider": "^2.1.0",
